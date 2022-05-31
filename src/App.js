@@ -5,6 +5,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Medicine from './container/Medicine';
 import Doctors from './container/Doctors';
+import Form from './componets/Form';
 
 function App() {
   return (
@@ -13,9 +14,11 @@ function App() {
       <Switch>
         <Route exact path={"/Medicine"} component={Medicine}></Route>
         <Route exact path={"/Doctors"} component={Doctors}></Route>
+        <Route exact path={"/Btn"} component={Form}></Route>
       </Switch>
 
     </Layout>
+    
     
     </>
   );
