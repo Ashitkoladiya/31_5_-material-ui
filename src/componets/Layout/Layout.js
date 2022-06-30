@@ -21,6 +21,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import { NavLink } from 'react-router-dom';
 import FeedIcon from '@mui/icons-material/Feed';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
 
 const drawerWidth = 240;
 
@@ -107,6 +108,7 @@ export default function Layout({ children }) {
         
     ]
     let list=[
+        { lable: 'counter', to: '/counter' , icon : <WatchLaterIcon />},
         { lable: 'Doctor', to: '/doctor', icon: <SupervisedUserCircleIcon /> },
         { lable: 'Button', to: '/Btn', icon: <FeedIcon /> }
     ]

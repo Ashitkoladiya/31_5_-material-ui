@@ -13,11 +13,14 @@ import { DataGrid } from '@mui/x-data-grid';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import Counter from './counter/Counter';
+import { useSelector } from 'react-redux';
 
 function Medicine(props) {
     const [open, setOpen] = React.useState(false);
     const [data, setData] = useState([]);
     const [update, setUpdate] = useState();
+    const [serchData , setSerchData]=useState([]);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -139,28 +142,56 @@ function Medicine(props) {
             setData(localData)
         }
     }
+    const handlesearch = (value) => {
+        let newData =JSON.parse(localStorage.getItem("medicine"))
+        let fData = newData.filter((l)=>{
+           l.name.toString().toLowerCase().includes(value.toLowerCase()) ||
+           l.price.toString().includes(value)||
+           l.quantity.toString().includes(value)||
+           l.expiry.toString().includes(value)
+
+        })
+        setSerchData(fData)
+        console.log(newData);
+    }
+
+    
+
 
     useEffect(
         () => {
             loadData();
         },
         [])
+        const Counter = useSelector(state => state.counter)
 
     return (
+
+
         <Box>
             <Container>
                 <div>
+                    <TextField
+                        margin="dense"
+                        id="name"
+                        label="search"
+                        type="search"
+                        fullWidth
+                        variant="standard"
+                        onChange={(e)=> handlesearch(e.target.value)}
+                    />
                     <center>
-                        
+
                         <Button variant="outlined" onClick={handleClickOpen}>
                             Add Medicine
                         </Button>
+
+                        <p>{Counter.counter}</p>
                     </center>
                     <div style={{ height: 400, width: '100%' }}>
                         <DataGrid
                             rows={data}
                             columns={columns}
-
                             pageSize={5}
                             rowsPerPageOptions={[5]}
                             checkboxSelection
