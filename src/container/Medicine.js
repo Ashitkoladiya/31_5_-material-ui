@@ -14,10 +14,11 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-function Medicine(props) {
+function Medicine(props) { 
     const [open, setOpen] = React.useState(false);
     const [data, setData] = useState([]);
     const [update, setUpdate] = useState();
+
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -139,12 +140,13 @@ function Medicine(props) {
             setData(localData)
         }
     }
-
+     
     useEffect(
         () => {
             loadData();
         },
         [])
+
 
     return (
         <Box>

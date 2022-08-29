@@ -1,0 +1,53 @@
+{
+  "medicines": [
+    {
+      "id": 1,
+      "title": "abc",
+      "price": 2500,
+      "expiry": 2023
+    },
+    {
+      "id": 2,
+      "title": "abc",
+      "price": 2500,
+      "expiry": 2023
+    },
+    {
+      "id": 3,
+      "title": "xyz",
+      "price": 2500,
+      "expiry": 2050
+    },
+    {
+      "id": 4,
+      "title": "dqr",
+      "price": 2000,
+      "expiry": 2026
+    }
+  ],
+  "Doctors": [
+    {
+      "id": 1,
+      "doctor": "abc",
+      "body": "these is Amit",
+      "postId": 5
+    },
+    {
+      "id": 2,
+      "doctor": "abcd",
+      "body": "these is Ajay",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "doctor": "abcde",
+      "body": "these is Axay",
+      "postId": 3
+    }
+  ],
+  "profile": {
+    "id": 2,
+    "name": "amit",
+    "age": 35
+  }
+}
